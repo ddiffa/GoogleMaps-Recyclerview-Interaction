@@ -1,0 +1,2 @@
+rootProject.name='GoogleMaps-Recylerview-Interaction'
+include ':app'
