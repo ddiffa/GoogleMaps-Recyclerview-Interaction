@@ -5,6 +5,7 @@ import android.os.Handler
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DefaultItemAnimator
 import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -92,7 +93,7 @@ class MainActivity : AppCompatActivity(), OnMapReadyCallback, GoogleMap.OnMarker
     private fun onScrolled(position: Int) {
         setCamera(getData()[position])
         mGoogleMap.setOnCameraMoveListener {
-            rv_maps.smoothScrollToPosition(position)
+            layoutManager.smoothScrollToPosition(rv_maps,RecyclerView.State(), position)
         }
     }
 
